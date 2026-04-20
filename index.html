@@ -3,573 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--
-    CUSTOMIZATION GUIDE (quick workflow)
-    1) Fill the SOURCE OF TRUTH values below once.
-    2) Reuse the exact same wording in all repeated places (meta, hero, JSON-LD, BibTeX).
-    3) Remove or comment out optional sections you do not use yet.
-
-    SOURCE OF TRUTH (copy these values into repeated blocks)
-    - PAPER_TITLE:
-    - PAPER_DESCRIPTION (150-160 chars):
-    - AUTHORS_DISPLAY (hero section):
-    - AUTHORS_CITATION (Last, First format for citation tags):
-    - PROJECT_URL:
-    - PDF_URL:
-    - SOCIAL_IMAGE_URL (1200x630):
-    - VENUE_AND_YEAR:
-    - BIBTEX_ENTRY:
-
-    OPTIONAL BLOCKS SAFE TO COMMENT OUT
-    - More Works dropdown
-    - Supplementary button
-    - Teaser video
-    - Image carousel
-    - YouTube video
-    - Video carousel
-    - Poster section
-    - Organization JSON-LD (if not needed)
-  -->
-  
-  <!-- Primary Meta Tags -->
-  <!-- REPEAT CHECK: Keep PAPER_TITLE identical in meta title, og:title, twitter:title, citation_title, JSON-LD headline, page <title>, hero H1, and BibTeX title. -->
-  <!-- REPEAT CHECK: Keep author order identical in hero list, meta author, citation_author tags, JSON-LD author list, and BibTeX author field. -->
-  <!-- REPEAT CHECK: Keep PROJECT_URL / PDF_URL / SOCIAL_IMAGE_URL consistent across all tags that reference them. -->
-  <!-- TODO: Replace with your paper title and author names -->
   <meta name="title" content="Learning Embodied Aesthetics for Autonomous Robotic Photography">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
+  <meta name="description" content="LEAP learns human-centered aesthetic composition from expert demonstrations and executes autonomous robotic photography with robust real-world performance.">
+  <meta name="keywords" content="robotic photography, embodied AI, aesthetics, imitation learning, flow matching">
   <meta name="author" content="Chang Chen, Dawei Wang, Zhilan Liao, Hang Xu, Yipeng Pan, Ignatius Japar, Mathieu Chambe, Hua Chen, Marc Christie, Jia Pan">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="The University of Hong Kong, Zhejiang University, University of Rennes, LimX Dynamics, Shenzhen Loop Area Institute">
-  <!-- TODO: Same as paper title above -->
+  <meta property="og:site_name" content="LEAP Project">
   <meta property="og:title" content="Learning Embodied Aesthetics for Autonomous Robotic Photography">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:description" content="LEAP learns human-centered aesthetic composition from expert demonstrations and executes autonomous robotic photography with robust real-world performance.">
   <meta property="og:url" content="https://cameronchen07.github.io/LEAP-project/">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Learning Embodied Aesthetics for Autonomous Robotic Photography - Research Preview">
-  <!-- Under review: publication date not available yet -->
-  <!-- <meta property="article:published_time" content="2024-01-01T00:00:00.000Z"> -->
-  <meta property="article:author" content="Chang Chen, Dawei Wang, Zhilan Liao, Hang Xu, Yipeng Pan, Ignatius Japar, Mathieu Chambe, Hua Chen, Marc Christie, Jia Pan">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter (optional; uncomment and fill if you want Twitter cards) -->
-  <!--
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <meta name="twitter:title" content="Learning Embodied Aesthetics for Autonomous Robotic Photography">
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="Learning Embodied Aesthetics for Autonomous Robotic Photography - Research Preview">
-  -->
-  
-
-  <!-- Academic/Research Specific -->
+  <meta property="og:image" content="https://cameronchen07.github.io/LEAP-project/static/images/carousel1.jpg">
   <meta name="citation_title" content="Learning Embodied Aesthetics for Autonomous Robotic Photography">
-  <meta name="citation_author" content="Chen, Chang">
-  <meta name="citation_author" content="Wang, Dawei">
-  <meta name="citation_author" content="Liao, Zhilan">
-  <meta name="citation_author" content="Xu, Hang">
-  <meta name="citation_author" content="Pan, Yipeng">
-  <meta name="citation_author" content="Japar, Ignatius">
-  <meta name="citation_author" content="Chambe, Mathieu">
-  <meta name="citation_author" content="Chen, Hua">
-  <meta name="citation_author" content="Christie, Marc">
-  <meta name="citation_author" content="Pan, Jia">
-  <!-- Under review: publication date and venue not available yet -->
-  <!-- <meta name="citation_publication_date" content="2024"> -->
-  <!-- <meta name="citation_conference_title" content="CONFERENCE_NAME"> -->
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
+  <meta name="citation_pdf_url" content="https://cameronchen07.github.io/LEAP-project/static/pdfs/sample.pdf">
   <title>Learning Embodied Aesthetics for Autonomous Robotic Photography</title>
-  
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-    <!-- IMPORTANT: Keep this block. It improves indexing and rich previews for academic pages. -->
-  <!-- Under review: datePublished and publisher were intentionally omitted below. -->
-  <!--
-  "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },-->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "Learning Embodied Aesthetics for Autonomous Robotic Photography",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Chang Chen",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "The University of Hong Kong"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Dawei Wang",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "The University of Hong Kong"
-        }
-      }
-    ],
-    
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <!-- OPTIONAL: Comment out this entire script block if you do not want to expose organization social links yet. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "The University of Hong Kong, Zhejiang University, University of Rennes, LimX Dynamics, Shenzhen Loop Area Institute",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
 </head>
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <!--
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        TODO: Replace with your lab's related works
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            TODO: Replace with actual paper title
-            <h5>Paper Title 1</h5>
-            TODO: Replace with brief description
-            <p>Brief description of the work and its main contribution.</p>
-            TODO: Replace with venue and year
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        TODO: Add more related works or remove extra items
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-  -->
-
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Learning Embodied Aesthetics for Autonomous Robotic Photography</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-                <span class="author-block">Chang Chen<sup>1, 5</sup>,</span>
-                <span class="author-block">Dawei Wang<sup>1</sup>,</span>
-                <span class="author-block">Zhilan Liao<sup>2</sup>,</span>
-                <span class="author-block">Hang Xu<sup>1</sup>,</span>
-                <span class="author-block">Yipeng Pan<sup>1</sup>,</span>
-                <span class="author-block">Ignatius Japar<sup>1</sup>,</span>
-                <span class="author-block">Mathieu Chambe<sup>3</sup>,</span>
-                <span class="author-block">Hua Chen<sup>4, &dagger;</sup>,</span>
-                <span class="author-block">Marc Christie<sup>3, &dagger;</sup>,</span>
-                <span class="author-block">Jia Pan<sup>1, 4, 5, &dagger;</sup></span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                      <span class="author-block"><sup>1</sup>The University of Hong Kong <sup>2</sup>Zhejiang University <sup>3</sup>University of Rennes <sup>4</sup>LimX Dynamics <sup>5</sup>Shenzhen Loop Area Institute</span>
-                      <!-- <span class="author-block"><sup>4</sup>LimX Dynamics  <sup>5</sup>Shenzhen Loop Area Institute</span> -->
-                      <span class="eql-cntrb"><br><sup>&dagger;</sup>Corresponding Authors</span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/CameronChen07/LEAP" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- OPTIONAL: If there is no supplementary material yet, comment out the Supplementary link-block above. -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video (OPTIONAL: comment out this section until teaser media is ready) -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Photography is a compelling test bed for embodied artificial intelligence because it requires subjective aesthetic judgment tightly coupled with precise physical action in dynamic real-world scenes. We present Learning Embodied Aesthetics for Photography (LEAP), a fully autonomous robotic photography paradigm that learns human-centered composition directly from real-world demonstrations. Rather than relying on explicit heuristic rules, LEAP combines appearance-invariant compositional representations with conditional flow matching to model the multimodal trajectory distributions of expert photographers, effectively translating tacit human aesthetic preferences into an active sensorimotor policy. It is deployed through a fast-slow hierarchical controller that explicitly decouples generative aesthetic decision-making (1.2 Hz) from robust physical navigation and collision avoidance (30 Hz). Trained on only ~1.7 hours of expert motion-capture data, LEAP generalizes seamlessly to unseen human poses, indoor scenes, and unstructured outdoor environments. In physical deployments, the fully scaled system achieved a 0% failure rate across 30 complex spatial tasks while continuously adapting to dynamic subject motion. Furthermore, capturing the inherent subjectivity of photography, LEAP demonstrated significant creative variance, generating an average of two distinct, well-composed stylistic trajectories per three trials from identical initial conditions. We further show that both robustness and stylistic diversity scale monotonically with demonstration volume and heterogeneous expert data. Across objective aesthetic metrics and online user studies, LEAP significantly outperformed existing autonomous baselines, approaching human-level photographic quality. These results demonstrate that robots can reliably acquire and execute tacit, subjective aesthetic skills through continuous physical interaction, opening a path toward autonomous systems as creative partners.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel (OPTIONAL: comment out this section if you only want a minimal page) -->
-<section class="hero is-small">
+<section class="hero is-light is-medium">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video (OPTIONAL: comment out this section if no presentation video is available) -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+    <div class="container has-text-centered">
+      <p class="title is-2">Learning Embodied Aesthetics for Autonomous Robotic Photography</p>
+      <p class="subtitle is-5">LEAP learns human-centered composition from expert demonstrations and turns tacit aesthetic skill into an autonomous sensorimotor policy.</p>
+      <div class="buttons is-centered">
+        <a class="button is-link" href="static/pdfs/sample.pdf">Paper PDF</a>
+        <a class="button is-dark" href="static/pdfs/leap_teaser.pdf">Teaser Figure</a>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel (OPTIONAL: comment out this section if not needed) -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster (OPTIONAL: comment out this section if no poster PDF yet) -->
-
-<!--
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      TODO: Replace with your poster PDF
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
--->
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-<!-- KEEP THIS SECTION: most research visitors expect a copyable citation. -->
-<!--
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+      <div class="column is-10 content">
+        <h2>At a glance</h2>
+        <ul>
+          <li><strong>Problem:</strong> autonomous robot photography in dynamic, human-centric scenes.</li>
+          <li><strong>Core idea:</strong> appearance-invariant compositional representations + conditional flow matching.</li>
+          <li><strong>Control:</strong> fast-slow hierarchy, 1.2 Hz aesthetic planning, 30 Hz navigation and collision avoidance.</li>
+          <li><strong>Data:</strong> only ~1.7 hours of expert motion-capture demonstrations.</li>
+          <li><strong>Outcome:</strong> 0% failure in 30 complex spatial tasks, with strong aesthetic quality and stylistic diversity.</li>
+        </ul>
       </div>
     </div>
   </div>
-</footer>
+</section>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<section class="section has-background-white-bis">
+  <div class="container">
+    <h2 class="title is-4 has-text-centered">Selected visuals</h2>
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <figure class="image"><img src="static/images/carousel1.jpg" alt="LEAP visual 1"></figure>
+      </div>
+      <div class="column is-6">
+        <figure class="image"><img src="static/images/carousel2.jpg" alt="LEAP visual 2"></figure>
+      </div>
+      <div class="column is-6">
+        <figure class="image"><img src="static/images/carousel3.jpg" alt="LEAP visual 3"></figure>
+      </div>
+      <div class="column is-6">
+        <figure class="image"><img src="static/images/carousel4.jpg" alt="LEAP visual 4"></figure>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- End of Statcounter Code -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-4 has-text-centered">Key figures from the paper</h2>
+    <div class="columns is-multiline">
+      <div class="column is-6"><object data="static/pdfs/leap_framework.pdf" type="application/pdf" width="100%" height="520"></object></div>
+      <div class="column is-6"><object data="static/pdfs/leap_performance.pdf" type="application/pdf" width="100%" height="520"></object></div>
+      <div class="column is-6"><object data="static/pdfs/leap_qualitative.pdf" type="application/pdf" width="100%" height="520"></object></div>
+      <div class="column is-6"><object data="static/pdfs/sample.pdf" type="application/pdf" width="100%" height="520"></object></div>
+    </div>
+  </div>
+</section>
 
-  </body>
-  </html>
+<section class="section has-background-white-bis">
+  <div class="container content">
+    <h2>Why it matters</h2>
+    <p>LEAP shows that a robot can learn a subjective creative skill, not just a fixed control objective. The method bridges perception, compositional reasoning, and real-world navigation into one deployable photography system.</p>
+  </div>
+</section>
+</body>
+</html>
